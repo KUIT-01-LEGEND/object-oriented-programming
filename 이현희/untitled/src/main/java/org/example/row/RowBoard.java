@@ -1,14 +1,14 @@
 package org.example.row;
 
-public class Board {
+public class RowBoard {
     private int[] board;
     private int size;
 
-    public Board(int size) {
+    public RowBoard(int size) {
         this.board = new int[size];
         this.size = size;
     }
-    public Board(int[] board) {
+    public RowBoard(int[] board) {
         this.board = board;
         this.size = board.length;
     }

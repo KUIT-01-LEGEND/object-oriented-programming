@@ -1,16 +1,16 @@
 package org.example.row;
 
 public class Row {
-    private Board board;
+    private RowBoard rowBoard;
     private RowDrawer rowDrawer;
     private RowPrinter rowPrinter;
     private RowRunner rowRunner;
 
     public Row(int size) {
-        board = new Board(size);
-        rowDrawer = new RowDrawer(board, size);
-        rowPrinter = new RowPrinter(board);
-        rowRunner = new RowRunner(board, size);
+        rowBoard = new RowBoard(size);
+        rowDrawer = new RowDrawer(rowBoard, size);
+        rowPrinter = new RowPrinter(rowBoard);
+        rowRunner = new RowRunner(rowBoard, size);
     }
 
     public void drawLine(int pos) {
@@ -33,6 +33,6 @@ public class Row {
     }
 
     public boolean isLineExist(int pos) {
-        return board.isLineExist(pos);
+        return rowBoard.isLineExist(pos);
     }
 }

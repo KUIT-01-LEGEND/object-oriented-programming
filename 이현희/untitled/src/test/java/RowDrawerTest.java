@@ -1,4 +1,4 @@
-import org.example.row.Board;
+import org.example.row.RowBoard;
 import org.example.row.RowDrawer;
 import org.junit.jupiter.api.Test;
 
@@ -9,15 +9,15 @@ public class RowDrawerTest {
     public void 선그리기() {
         //given
         int size = 5;
-        Board board = new Board(size);
-        RowDrawer rowDrawer = new RowDrawer(board, size);
+        RowBoard rowBoard = new RowBoard(size);
+        RowDrawer rowDrawer = new RowDrawer(rowBoard, size);
 
         //when
         int position = 3;
         rowDrawer.drawLine(position);
 
         //then
-        boolean ret = board.isLineExist(position);
+        boolean ret = rowBoard.isLineExist(position);
         assertEquals(ret, true);
     }
 

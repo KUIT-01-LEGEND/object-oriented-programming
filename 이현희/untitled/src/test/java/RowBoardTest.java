@@ -1,18 +1,18 @@
-import org.example.row.Board;
+import org.example.row.RowBoard;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BoardTest {
+public class RowBoardTest {
     @Test
     public void 보드에서라인존재하는지확인() {
         //given
         int size = 5;
-        Board board = new Board(size);
+        RowBoard rowBoard = new RowBoard(size);
 
         //when
         int position = 3;
-        boolean ret = board.isLineExist(position);
+        boolean ret = rowBoard.isLineExist(position);
 
         //then
         assertEquals(ret, false);
@@ -23,11 +23,11 @@ public class BoardTest {
         int size = 5;
         int[] b = new int[size];
         b[2] = 1;
-        Board board = new Board(b);
+        RowBoard rowBoard = new RowBoard(b);
 
         //when
         int position = 3;
-        boolean ret = board.isLineExist(position);
+        boolean ret = rowBoard.isLineExist(position);
 
         //then
         assertEquals(ret, true);
@@ -36,12 +36,12 @@ public class BoardTest {
     public void 보드에서값설정및확인() {
         //given
         int size = 5;
-        Board board = new Board(size);
+        RowBoard rowBoard = new RowBoard(size);
 
         //when
         int pos = 3;
-        board.setPosValue(pos, 1);
-        int ret = board.getPosValue(pos);
+        rowBoard.setPosValue(pos, 1);
+        int ret = rowBoard.getPosValue(pos);
 
         //then
         assertEquals(ret, 1);
