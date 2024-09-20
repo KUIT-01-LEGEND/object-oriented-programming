@@ -1,3 +1,4 @@
+import org.example.Board;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -11,7 +12,7 @@ public class BoardTest {
 
         //when
         int position = 3;
-        int ret = board.isLineExist(position);
+        boolean ret = board.isLineExist(position);
 
         //then
         assertEquals(ret, false);
@@ -27,7 +28,7 @@ public class BoardTest {
 
         //when
         int position = 3;
-        int ret = board.isLineExist(position);
+        boolean ret = board.isLineExist(position);
 
         //then
         assertEquals(ret, true);
