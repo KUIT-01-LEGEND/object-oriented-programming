@@ -1,6 +1,6 @@
 package ladder;
 
-import org.example.Ladder;
+import org.example.ladder.Ladder;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

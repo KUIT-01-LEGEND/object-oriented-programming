@@ -1,4 +1,4 @@
-package org.example;
+package org.example.ladder;
 
 import org.example.row.Row;
 
