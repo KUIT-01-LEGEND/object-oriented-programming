@@ -20,21 +20,19 @@ public class Row {
     public String print() {
         return rowPrinter.print();
     }
-
     public String printWithStar(int currentPos) {
         return rowPrinter.printWithStar(currentPos);
-    }
-
-    public boolean isLineExist(int pos) {
-        return board.isLineExist(pos);
     }
 
     public int run(int startPos) {
         return rowRunner.run(startPos);
     }
-
     public int runWithPrint(int startPos) {
         rowPrinter.printWithStar(startPos);
         return rowRunner.run(startPos);
+    }
+
+    public boolean isLineExist(int pos) {
+        return board.isLineExist(pos);
     }
 }

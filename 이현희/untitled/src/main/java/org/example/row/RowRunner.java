@@ -1,7 +1,6 @@
 package org.example.row;
 
 public class RowRunner {
-    
     private Board board;
     private int size;
 
