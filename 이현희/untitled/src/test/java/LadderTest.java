@@ -236,4 +236,20 @@ public class LadderTest {
         assertEquals(ret2, 5);
         assertEquals(ret3, 6);
     }
+
+    @Test
+    public void 사다리모양출력하기() {
+        //given
+        Ladder ladder = new Ladder(6, 6);
+
+        //when
+        ladder.drawLine(1, 2);
+        ladder.drawLine(4, 2);
+        ladder.drawLine(3, 3);
+        ladder.drawLine(1, 4);
+        ladder.drawLine(4, 4);
+        ladder.printShape();
+
+        //then
+    }
 }
