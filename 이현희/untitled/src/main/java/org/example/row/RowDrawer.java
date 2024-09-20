@@ -8,6 +8,7 @@ public class RowDrawer {
         this.board = board;
         this.size = size;
     }
+
     public void drawLine(int pos) {
         if(pos != 1 && board.isLineExist(pos-1))
             return;

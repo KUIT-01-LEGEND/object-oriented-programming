@@ -6,6 +6,7 @@ public class RowPrinter {
     public RowPrinter(Board board) {
         this.board = board;
     }
+
     public String print() {
         StringBuilder str = new StringBuilder();
         int pos = 1;
