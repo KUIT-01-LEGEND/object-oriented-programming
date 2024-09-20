@@ -250,7 +250,7 @@ public class LadderTest {
         ladder.drawLine(4, 4);
 
         //when
-        ladder.printBoard();
+        ladder.print();
 
         //then
     }
