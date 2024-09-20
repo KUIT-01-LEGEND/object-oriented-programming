@@ -1,3 +1,4 @@
+import org.example.row.Board;
 import org.example.row.RowPrinter;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +9,7 @@ public class RowPrinterTest {
     public void 출력하기() {
         //given
         int size = 5;
-        int[] board = new int[size];
+        Board board = new Board(size);
         RowPrinter rowPrinter = new RowPrinter(board);
 
         //when
@@ -22,7 +23,7 @@ public class RowPrinterTest {
     public void 별섞어출력하기() {
         //given
         int size = 5;
-        int[] board = new int[size];
+        Board board = new Board(size);
         RowPrinter rowPrinter = new RowPrinter(board);
 
         //when

@@ -1,3 +1,4 @@
+import org.example.row.Board;
 import org.example.row.RowDrawer;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +9,7 @@ public class RowDrawerTest {
     public void 선그리기() {
         //given
         int size = 5;
-        int[] board = new int[size];
+        Board board = new Board(size);
         RowDrawer rowDrawer = new RowDrawer(board, size);
 
         //when
@@ -16,7 +17,7 @@ public class RowDrawerTest {
         rowDrawer.drawLine(position);
 
         //then
-        boolean ret = rowDrawer.isLineExist(position);
+        boolean ret = board.isLineExist(position);
         assertEquals(ret, true);
     }
 
