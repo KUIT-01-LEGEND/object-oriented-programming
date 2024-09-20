@@ -2,14 +2,15 @@ package org.example;
 
 public class Row {
     private int[] board;
-    private int size;
     private RowDrawer rowDrawer;
     private RowPrinter rowPrinter;
+    private RowRunner rowRunner;
 
     public Row(int size) {
         board = new int[size];
         rowDrawer = new RowDrawer(board, size);
         rowPrinter = new RowPrinter(board);
+        rowRunner = new RowRunner(board, size);
     }
 
     public void drawLine(int pos) {
@@ -29,10 +30,11 @@ public class Row {
     }
 
     public int run(int startPos) {
-        if(startPos != 1 && isLineExist(startPos-1))
-            return startPos-1;
-        if(startPos != size-1 && isLineExist(startPos))
-            return startPos+1;
-        return startPos;
+        return rowRunner.run(startPos);
+    }
+
+    public int runWithPrint(int startPos) {
+        rowPrinter.printWithStar(startPos);
+        return rowRunner.run(startPos);
     }
 }
