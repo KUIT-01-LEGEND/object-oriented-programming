@@ -1,4 +1,4 @@
-import org.example.RowRunner;
+import org.example.row.RowRunner;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

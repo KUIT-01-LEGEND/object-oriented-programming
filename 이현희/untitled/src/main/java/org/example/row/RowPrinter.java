@@ -1,4 +1,4 @@
-package org.example;
+package org.example.row;
 
 public class RowPrinter {
     private int[] board;
