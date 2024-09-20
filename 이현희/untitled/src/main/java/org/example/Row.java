@@ -4,10 +4,12 @@ public class Row {
     private int[] board;
     private int size;
     private RowDrawer rowDrawer;
+    private RowPrinter rowPrinter;
 
     public Row(int size) {
         board = new int[size];
         rowDrawer = new RowDrawer(board, size);
+        rowPrinter = new RowPrinter(board);
     }
 
     public void drawLine(int pos) {
@@ -15,22 +17,11 @@ public class Row {
     }
 
     public String print() {
-        StringBuilder str = new StringBuilder();
-        for (int val : board)
-            str.append(val).append(" ");
-        System.out.println(str);
-        return str.toString();
+        return rowPrinter.print();
     }
 
     public String printWithStar(int currentPos) {
-        StringBuilder str = new StringBuilder();
-        for (int i = 0; i < board.length; i++) {
-            str.append(board[i]).append(" ");
-            if(currentPos == i)
-                str.append("*");
-        }
-        System.out.println(str);
-        return str.toString();
+        return rowPrinter.printWithStar(currentPos);
     }
 
     public boolean isLineExist(int pos) {
