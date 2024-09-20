@@ -1,8 +1,5 @@
 package org.example.ladder;
 
-import org.example.Position;
-import org.example.row.Row;
-
 public class Ladder {
     private LadderBoard ladderBoard;
     private LadderDrawer ladderDrawer;
