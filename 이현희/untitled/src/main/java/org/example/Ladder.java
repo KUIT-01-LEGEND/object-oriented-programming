@@ -6,6 +6,8 @@ public class Ladder {
     private int height;
 
     public Ladder(int numberOfPeople, int height) {
+        this.numberOfPeople = numberOfPeople;
+        this.height = height;
         board = new int[height][numberOfPeople];
     }
 
@@ -90,10 +92,10 @@ public class Ladder {
     }
 
     private void addLine(int xPos, int yPos) {
-        board[xPos-1][yPos-1] = 1;
+        board[yPos-1][xPos-1] = 1;
     }
 
     private boolean isLineExist(int xPos, int yPos) {
-        return board[xPos-1][yPos-1] == 1;
+        return board[yPos-1][xPos-1] == 1;
     }
 }
