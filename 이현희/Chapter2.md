@@ -91,6 +91,9 @@
 "Reference Object" 또는 "Entity"라고 구분해서 부르기도 함.
 
 *어 근데 궁금한 점 생김. 자바에서는 리터럴이나 Value Object를 어떻게 다루지? 스태틱 영역 뭐 그런데에 저장하는 건가?*
+*원시타입은 stack에 저장된다는데?? 일단 JVM 메모리 구조가 어떻게 되더라?*
+*int 1 == Integer(1) 비교하면 어떻게 됨? == 쓰면 알아서 unboxing되고 equals 쓰면 알아서 boxing 됨*
+*+ 식별자가 실제 자바에서는 어떻게 구현되는가? -> 아마 주솟값 아닐까? 동일성 비교할 때 쓰는게 주솟값이니까.. 그런데 hashcode나 equals 오버라이딩하면 동등성 구현해서 Value Object를 만들 수도 있음*
 
 ## query, command, 기계 객체
 "상태"를 조회하는 작업은 "query", "상태"를 변경하는 작업은 "command"
