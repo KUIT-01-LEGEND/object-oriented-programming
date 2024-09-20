@@ -60,4 +60,35 @@ public class Ladder {
         }
         System.out.println(ret);
     }
+
+    private void printShapeWithStar(int x, int y) {
+        String ret = "";
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < numberOfPeople; j++) {
+                ret += shape[i][j];
+                if(x == j && y == i) {
+                    ret += "*";
+                }
+                ret += " ";
+            }
+            ret += "\n";
+        }
+        System.out.println(ret);
+    }
+
+    public int runWithPrint(int xPos) {
+        int x = xPos-1;
+        for (int i = 0; i < height; i++) {
+            printShapeWithStar(x, i);
+            if(x-1 >= 0 && shape[i][x-1] == 1) {
+                x--;
+                printShapeWithStar(x, i);
+            }
+            else if (shape[i][x] == 1){
+                x++;
+                printShapeWithStar(x, i);
+            }
+        }
+        return x+1;
+    }
 }
