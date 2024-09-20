@@ -1,3 +1,5 @@
+package row;
+
 import org.example.row.Row;
 import org.junit.jupiter.api.Test;
 
