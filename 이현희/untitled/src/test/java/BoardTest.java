@@ -17,7 +17,6 @@ public class BoardTest {
         //then
         assertEquals(ret, false);
     }
-
     @Test
     public void 보드에서라인존재하는지확인2() {
         //given
@@ -32,5 +31,19 @@ public class BoardTest {
 
         //then
         assertEquals(ret, true);
+    }
+    @Test
+    public void 보드에서값설정및확인() {
+        //given
+        int size = 5;
+        Board board = new Board(size);
+
+        //when
+        int pos = 3;
+        board.setPosValue(pos, 1);
+        int ret = board.getPosValue(pos);
+
+        //then
+        assertEquals(ret, 1);
     }
 }
