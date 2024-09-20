@@ -1,3 +1,5 @@
+package ladder;
+
 import org.example.Ladder;
 import org.junit.jupiter.api.Test;
 
