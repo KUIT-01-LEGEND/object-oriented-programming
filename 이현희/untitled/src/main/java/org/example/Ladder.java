@@ -14,16 +14,18 @@ public class Ladder {
 
     //왼쪽에서 오른쪽으로 그어
     public void drawLine(int x, int y) {
-        if(y == 1 || y == height)
+        Position pos = new Position(x, y);
+
+        if(pos.isYEqual(1) || pos.isYEqual(height))
             return;
-        if(x == numberOfPeople)
+        if(pos.isXEqual(numberOfPeople))
             return;
-        if(x == 1) {
+        if(pos.isXEqual(1)) {
             if(shape[y-1][x] != 1)
                 shape[y - 1][x - 1] = 1;
             return;
         }
-        if(x == numberOfPeople-1) {
+        if(pos.isXEqual(numberOfPeople-1)) {
             if(shape[y-1][x-2] != 1)
                 shape[y-1][x-1] = 1;
             return;
@@ -62,11 +64,13 @@ public class Ladder {
     }
 
     private void printShapeWithStar(int x, int y) {
+        Position pos = new Position(x, y);
+
         String ret = "";
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < numberOfPeople; j++) {
                 ret += shape[i][j];
-                if(x == j && y == i) {
+                if(pos.equals(new Position(i, j))) {
                     ret += "*";
                 }
                 ret += " ";

@@ -1,4 +1,5 @@
 import org.example.Ladder;
+import org.example.Position;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
