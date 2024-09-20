@@ -1,17 +1,17 @@
 package org.example.row;
 
 public class RowPrinter {
-    private Board board;
+    private RowBoard rowBoard;
 
-    public RowPrinter(Board board) {
-        this.board = board;
+    public RowPrinter(RowBoard rowBoard) {
+        this.rowBoard = rowBoard;
     }
 
     public String print() {
         StringBuilder str = new StringBuilder();
         int pos = 1;
         int val;
-        while((val = board.getPosValue(pos)) != -1) {
+        while((val = rowBoard.getPosValue(pos)) != -1) {
             str.append(val).append(" ");
             pos++;
         }
@@ -22,7 +22,7 @@ public class RowPrinter {
         StringBuilder str = new StringBuilder();
         int pos = 1;
         int val;
-        while((val = board.getPosValue(pos)) != -1) {
+        while((val = rowBoard.getPosValue(pos)) != -1) {
             str.append(val);
             if(currentPos == pos)
                 str.append("*");
