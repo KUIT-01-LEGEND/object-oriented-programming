@@ -1,5 +1,8 @@
 package ladder;
 
+import org.example.ladder.LadderBoard;
+import org.example.ladder.LadderDrawer;
+import org.example.row.Row;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -17,9 +20,9 @@ public class LadderDrawerTest {
         int xPos = 3;
         int yPos = 3;
         ladderDrawer.drawLine(xPos, yPos);
-        int ret = ladderBoard.getPosValue(xPos, yPos);
+        Row ret = ladderBoard.getPosRow(yPos);
 
         //then
-        assertEquals(ret, 1);
+        assertEquals(ret.print().trim(), "0 0 1 0 0 0");
     }
 }

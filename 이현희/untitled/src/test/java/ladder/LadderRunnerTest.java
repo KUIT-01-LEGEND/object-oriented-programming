@@ -1,5 +1,7 @@
 package ladder;
 
+import org.example.ladder.LadderBoard;
+import org.example.ladder.LadderRunner;
 import org.example.row.RowBoard;
 import org.example.row.RowRunner;
 import org.junit.jupiter.api.Test;
