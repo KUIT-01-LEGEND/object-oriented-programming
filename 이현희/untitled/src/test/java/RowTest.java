@@ -49,4 +49,18 @@ public class RowTest {
         //then
         assertEquals(str, "0 0 1 0 0 ");
     }
+
+        @Test
+    public void 출력하며실행하기() {
+        //given
+        int size = 5;
+        Row row = new Row(size);
+
+        //when
+        int startPos = 3;
+        int ret = row.runWithPrint(3);
+
+        //then
+        assertEquals(ret, 3);
+    }
 }
