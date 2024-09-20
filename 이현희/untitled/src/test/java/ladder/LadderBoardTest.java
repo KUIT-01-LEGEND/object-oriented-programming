@@ -97,4 +97,22 @@ public class LadderBoardTest {
         assertEquals(ret1, true);
         assertEquals(ret2, false);
     }
+
+    @Test
+    public void numberOfPeople값과같은지확인하기() {
+        //given
+        int xSize = 6;
+        int ySize = 6;
+        LadderBoard ladderBoard = new LadderBoard(xSize, ySize);
+
+        //when
+        int xPos1 = 6;
+        int xPos2 = 7;
+        boolean ret1 = ladderBoard.isSameWithNumberOfPeople(xPos1);
+        boolean ret2 = ladderBoard.isSameWithNumberOfPeople(xPos2);
+
+        //then
+        assertEquals(ret1, true);
+        assertEquals(ret2, false);
+    }
 }

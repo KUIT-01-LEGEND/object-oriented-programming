@@ -11,7 +11,7 @@ public class LadderDrawer {
     }
 
     public void drawLine(int xPos, int yPos) {
-        if(xPos == 1 || ladderBoard.isSameWithHeight(yPos) || yPos == 1)
+        if(ladderBoard.isSameWithNumberOfPeople(xPos) || ladderBoard.isSameWithHeight(yPos) || yPos == 1)
             return;
         Row row = ladderBoard.getPosRow(yPos);
         row.drawLine(xPos);

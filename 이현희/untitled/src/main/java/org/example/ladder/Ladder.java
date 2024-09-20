@@ -1,51 +1,43 @@
 package org.example.ladder;
 
+import org.example.Position;
 import org.example.row.Row;
 
 public class Ladder {
-    private Row[] board;
-    private int numberOfPeople;
-    private int height;
+    private LadderBoard ladderBoard;
+    private LadderDrawer ladderDrawer;
+    private LadderPrinter ladderPrinter;
+    private LadderRunner ladderRunner;
 
     public Ladder(int numberOfPeople, int height) {
-        this.numberOfPeople = numberOfPeople;
-        this.height = height;
-        board = new Row[height];
-        for (int i = 0; i < board.length; i++)
-            board[i] = new Row(numberOfPeople);
+        this.ladderBoard = new LadderBoard(numberOfPeople, height);
+        this.ladderDrawer = new LadderDrawer(ladderBoard);
+        this.ladderPrinter = new LadderPrinter(ladderBoard);
+        this.ladderRunner = new LadderRunner(ladderBoard);
     }
 
     //왼쪽에서 오른쪽으로 그어
     public void drawLine(int xPos, int yPos) {
-        if(xPos == numberOfPeople || yPos == height || yPos == 1)
-            return;
-        board[yPos-1].drawLine(xPos);
+        ladderDrawer.drawLine(xPos, yPos);
     }
 
     public int run(int xPos) {
-        int currentXPos = xPos;
-        for (int yPos = 1; yPos < height + 1; yPos++)
-            currentXPos = board[yPos-1].run(currentXPos);
-        return currentXPos;
+        return ladderRunner.run(xPos);
     }
 
     public int runWithPrint(int xPos) {
-        int currentXPos = xPos;
-        for (int yPos = 1; yPos < height + 1; yPos++) {
-            board[yPos-1].printWithStar(currentXPos);
-            currentXPos = board[yPos-1].run(currentXPos);
-        }
-        return currentXPos;
+        return ladderRunner.runWithPrint(xPos);
     }
 
-    public void printBoard() {
-        for (int yPos = 1; yPos < height + 1; yPos++) {
-            board[yPos-1].print();
-            System.out.println("\n");
-        }
+    public String print() {
+        return ladderPrinter.print();
+    }
+
+    public String printWithStar(int xPos, int yPos) {
+        return ladderPrinter.printWithStar(xPos, yPos);
     }
 
     public int getPosValue(int xPos, int yPos) {
-        return board[yPos-1].isLineExist(xPos) ? 1 : 0;
+        return ladderBoard.getPosValue(xPos, yPos);
     }
 }
