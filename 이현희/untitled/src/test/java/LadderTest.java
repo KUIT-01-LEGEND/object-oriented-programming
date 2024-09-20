@@ -1,5 +1,4 @@
 import org.example.Ladder;
-import org.example.Position;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -249,7 +248,7 @@ public class LadderTest {
         ladder.drawLine(4, 4);
 
         //when
-        ladder.printShape();
+        ladder.printBoard();
 
         //then
     }
