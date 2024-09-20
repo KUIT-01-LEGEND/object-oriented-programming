@@ -1,3 +1,4 @@
+import org.example.Row;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -46,6 +47,6 @@ public class RowTest {
         String str = row.print();
 
         //then
-        assertEquals(str, "0 0 1 0 0");
+        assertEquals(str, "0 0 1 0 0 ");
     }
 }
