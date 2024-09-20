@@ -220,13 +220,13 @@ public class LadderTest {
         int x1 = 2;
         int x2 = 3;
         int x3 = 6;
-
-        //when
         ladder.drawLine(1, 2);
         ladder.drawLine(4, 2);
         ladder.drawLine(3, 3);
         ladder.drawLine(1, 4);
         ladder.drawLine(4, 4);
+
+        //when
         int ret1 = ladder.run(x1);
         int ret2 = ladder.run(x2);
         int ret3 = ladder.run(x3);
@@ -241,15 +241,33 @@ public class LadderTest {
     public void 사다리모양출력하기() {
         //given
         Ladder ladder = new Ladder(6, 6);
-
-        //when
         ladder.drawLine(1, 2);
         ladder.drawLine(4, 2);
         ladder.drawLine(3, 3);
         ladder.drawLine(1, 4);
         ladder.drawLine(4, 4);
+
+        //when
         ladder.printShape();
 
         //then
+    }
+
+    @Test
+    public void 실행하며사다리모양출력하기() {
+        //given
+        Ladder ladder = new Ladder(6, 6);
+        int x = 2;
+        ladder.drawLine(1, 2);
+        ladder.drawLine(4, 2);
+        ladder.drawLine(3, 3);
+        ladder.drawLine(1, 4);
+        ladder.drawLine(4, 4);
+
+        //when
+        int ret = ladder.runWithPrint(x);
+
+        //then
+        assertEquals(ret, 2);
     }
 }
