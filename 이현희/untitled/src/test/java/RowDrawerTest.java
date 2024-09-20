@@ -7,10 +7,12 @@ public class RowDrawerTest {
     @Test
     public void 선그리기() {
         //given
-        RowDrawer rowDrawer = new RawDrawer();
+        int size = 5;
+        int[] board = new int[size];
+        RowDrawer rowDrawer = new RowDrawer(board, size);
 
         //when
-        int position;
+        int position = 3;
         rowDrawer.drawLine(position);
 
         //then
