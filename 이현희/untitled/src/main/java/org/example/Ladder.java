@@ -40,11 +40,14 @@ public class Ladder {
         shape[y-1][x-1] = 1;
     }
 
-    public void run(int xPos) {
-//        int x = xPos;
-//        for (int i = 0; i < height; i++) {
-//            if(shape[i][x] == 1)
-//                x
-//        }
+    public int run(int xPos) {
+        int x = xPos-1;
+        for (int i = 0; i < height; i++) {
+            if(x-1 >= 0 && shape[i][x-1] == 1)
+                x--;
+            else if(shape[i][x] == 1)
+                x++;
+        }
+        return x+1;
     }
 }
