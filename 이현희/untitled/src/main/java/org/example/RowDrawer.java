@@ -8,13 +8,15 @@ public class RowDrawer {
         this.board = board;
         this.size = size;
     }
-    public void drawLine(int position) {
-        if(position >= size)
+    public void drawLine(int pos) {
+        if(pos != 1 && isLineExist(pos-1))
             return;
-        board[position-1] = 1;
+        if(pos != size && isLineExist(pos+1))
+            return;
+        board[pos-1] = 1;
     }
 
-    public boolean isLineExist(int position) {
-        return board[position-1] == 1;
+    public boolean isLineExist(int pos) {
+        return board[pos-1] == 1;
     }
 }

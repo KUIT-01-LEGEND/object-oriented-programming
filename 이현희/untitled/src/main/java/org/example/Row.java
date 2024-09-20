@@ -3,17 +3,15 @@ package org.example;
 public class Row {
     private int[] board;
     private int size;
+    private RowDrawer rowDrawer;
 
     public Row(int size) {
         board = new int[size];
+        rowDrawer = new RowDrawer(board, size);
     }
 
     public void drawLine(int pos) {
-        if(pos != 1 && isLineExist(pos-1))
-            return;
-        if(pos != size && isLineExist(pos+1))
-            return;
-        board[pos-1] = 1;
+        rowDrawer.drawLine(pos);
     }
 
     public String print() {
@@ -36,7 +34,7 @@ public class Row {
     }
 
     public boolean isLineExist(int pos) {
-        return board[pos-1] == 1;
+        return rowDrawer.isLineExist(pos);
     }
 
     public int run(int startPos) {
