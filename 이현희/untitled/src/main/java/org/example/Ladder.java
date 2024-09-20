@@ -46,11 +46,4 @@ public class Ladder {
     public int getPosValue(int xPos, int yPos) {
         return board[yPos-1].isLineExist(xPos) ? 1 : 0;
     }
-
-    private void printShapeWithStar(int xPos, int yPos) {
-        for (int y = 1; y < height + 1; y++) {
-            board[y-1].printWithStar(xPos);
-            System.out.println("\n");
-        }
-    }
 }
