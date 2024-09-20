@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.row.Row;
+
 public class Ladder {
     private Row[] board;
     private int numberOfPeople;

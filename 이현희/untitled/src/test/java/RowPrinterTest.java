@@ -1,4 +1,4 @@
-import org.example.RowPrinter;
+import org.example.row.RowPrinter;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
