@@ -9,13 +9,27 @@ public class Row {
     }
 
     public void drawLine(int pos) {
+        if(pos != 1 && isLineExist(pos-1))
+            return;
+        if(pos != size && isLineExist(pos+1))
+            return;
         board[pos-1] = 1;
     }
 
     public String print() {
         StringBuilder str = new StringBuilder();
-        for (int val : board) {
+        for (int val : board)
             str.append(val).append(" ");
+        System.out.println(str);
+        return str.toString();
+    }
+
+    public String printWithStar(int currentPos) {
+        StringBuilder str = new StringBuilder();
+        for (int i = 0; i < board.length; i++) {
+            str.append(board[i]).append(" ");
+            if(currentPos == i)
+                str.append("*");
         }
         System.out.println(str);
         return str.toString();
