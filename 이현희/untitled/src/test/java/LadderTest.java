@@ -187,4 +187,53 @@ public class LadderTest {
         assertEquals(ladder.getPosValue(x1, y1), 1);
         assertEquals(ladder.getPosValue(x2, y2), 0);
     }
+
+    @Test
+    public void 선을하나도안그렸을때_실행하기() {
+        //given
+        Ladder ladder1 = new Ladder(6, 6);
+        Ladder ladder2 = new Ladder(6, 6);
+        Ladder ladder3 = new Ladder(6, 6);
+        Ladder ladder4 = new Ladder(6, 6);
+        int x1 = 1;
+        int x2 = 2;
+        int x3 = 3;
+        int x4 = 4;
+
+        //when
+        int ret1 = ladder1.run(x1);
+        int ret2 = ladder2.run(x2);
+        int ret3 = ladder3.run(x3);
+        int ret4 = ladder4.run(x4);
+
+        //then
+        assertEquals(ret1, x1);
+        assertEquals(ret2, x2);
+        assertEquals(ret3, x3);
+        assertEquals(ret4, x4);
+    }
+
+    @Test
+    public void 대충선긋고_실행하기() {
+        //given
+        Ladder ladder = new Ladder(6, 6);
+        int x1 = 2;
+        int x2 = 3;
+        int x3 = 6;
+
+        //when
+        ladder.drawLine(1, 2);
+        ladder.drawLine(4, 2);
+        ladder.drawLine(3, 3);
+        ladder.drawLine(1, 4);
+        ladder.drawLine(4, 4);
+        int ret1 = ladder.run(x1);
+        int ret2 = ladder.run(x2);
+        int ret3 = ladder.run(x3);
+
+        //then
+        assertEquals(ret1, 2);
+        assertEquals(ret2, 5);
+        assertEquals(ret3, 6);
+    }
 }
