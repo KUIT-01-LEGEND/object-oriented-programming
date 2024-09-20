@@ -1,5 +1,7 @@
 package ladder;
 
+import org.example.ladder.LadderBoard;
+import org.example.ladder.LadderPrinter;
 import org.example.row.RowBoard;
 import org.example.row.RowPrinter;
 import org.junit.jupiter.api.Test;
@@ -19,12 +21,12 @@ public class LadderPrinterTest {
         String[] str = ladderPrinter.print().split("\n");
 
         //then
-        assertEquals(str[0].trim(), "0 0 0 0 0");
-        assertEquals(str[1].trim(), "0 0 0 0 0");
-        assertEquals(str[2].trim(), "0 0 0 0 0");
-        assertEquals(str[3].trim(), "0 0 0 0 0");
-        assertEquals(str[4].trim(), "0 0 0 0 0");
-        assertEquals(str[5].trim(), "0 0 0 0 0");
+        assertEquals(str[0].trim(), "0 0 0 0 0 0");
+        assertEquals(str[1].trim(), "0 0 0 0 0 0");
+        assertEquals(str[2].trim(), "0 0 0 0 0 0");
+        assertEquals(str[3].trim(), "0 0 0 0 0 0");
+        assertEquals(str[4].trim(), "0 0 0 0 0 0");
+        assertEquals(str[5].trim(), "0 0 0 0 0 0");
     }
 
     @Test
@@ -41,11 +43,11 @@ public class LadderPrinterTest {
         String[] str = ladderPrinter.printWithStar(currentXPos, currentYPos).split("\n");
 
         //then
-        assertEquals(str[0].trim(), "0 0 0 0 0");
-        assertEquals(str[1].trim(), "0 0 0 0 0");
-        assertEquals(str[2].trim(), "0 0 0* 0 0");
-        assertEquals(str[3].trim(), "0 0 0 0 0");
-        assertEquals(str[4].trim(), "0 0 0 0 0");
-        assertEquals(str[5].trim(), "0 0 0 0 0");
+        assertEquals(str[0].trim(), "0 0 0 0 0 0");
+        assertEquals(str[1].trim(), "0 0 0 0 0 0");
+        assertEquals(str[2].trim(), "0 0 0* 0 0 0");
+        assertEquals(str[3].trim(), "0 0 0 0 0 0");
+        assertEquals(str[4].trim(), "0 0 0 0 0 0");
+        assertEquals(str[5].trim(), "0 0 0 0 0 0");
     }
 }

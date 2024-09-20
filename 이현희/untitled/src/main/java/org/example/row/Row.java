@@ -20,8 +20,8 @@ public class Row {
     public String print() {
         return rowPrinter.print();
     }
-    public String printWithStar(int currentPos) {
-        return rowPrinter.printWithStar(currentPos);
+    public String printWithStar(int pos) {
+        return rowPrinter.printWithStar(pos);
     }
 
     public int run(int startPos) {
