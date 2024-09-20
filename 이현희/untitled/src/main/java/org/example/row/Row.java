@@ -1,13 +1,13 @@
 package org.example.row;
 
 public class Row {
-    private int[] board;
+    private Board board;
     private RowDrawer rowDrawer;
     private RowPrinter rowPrinter;
     private RowRunner rowRunner;
 
     public Row(int size) {
-        board = new int[size];
+        board = new Board(size);
         rowDrawer = new RowDrawer(board, size);
         rowPrinter = new RowPrinter(board);
         rowRunner = new RowRunner(board, size);
@@ -26,7 +26,7 @@ public class Row {
     }
 
     public boolean isLineExist(int pos) {
-        return rowDrawer.isLineExist(pos);
+        return board.isLineExist(pos);
     }
 
     public int run(int startPos) {

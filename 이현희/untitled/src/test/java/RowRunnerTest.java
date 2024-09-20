@@ -1,3 +1,4 @@
+import org.example.row.Board;
 import org.example.row.RowRunner;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +9,7 @@ public class RowRunnerTest {
     public void 실행하기() {
         //given
         int size = 5;
-        int[] board = new int[size];
+        Board board = new Board(size);
         RowRunner rowRunner = new RowRunner(board, size);
 
         //when

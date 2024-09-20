@@ -17,4 +17,13 @@ public class Board {
         return board[pos-1] == 1;
     }
 
+    public void setPosValue(int pos, int value) {
+        board[pos-1] = value;
+    }
+
+    public int getPosValue(int pos) {
+        if(pos < 1 || pos > size)
+            return -1;
+        return board[pos-1];
+    }
 }
