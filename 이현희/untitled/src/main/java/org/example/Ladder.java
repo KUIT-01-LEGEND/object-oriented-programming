@@ -12,8 +12,8 @@ public class Ladder {
         shape = new int[height][numberOfPeople];
     }
 
-    public int[][] getShape() {
-        return shape;
+    public int getPosValue(int x, int y) {
+        return shape[y-1][x-1];
     }
 
 
@@ -23,11 +23,25 @@ public class Ladder {
             return;
         if(x == numberOfPeople)
             return;
+        if(x == 1) {
+            if(shape[y-1][x] != 1)
+                shape[y - 1][x - 1] = 1;
+            return;
+        }
+        if(x == numberOfPeople-1) {
+            if(shape[y-1][x-2] != 1)
+                shape[y-1][x-1] = 1;
+            return;
+        }
+        if(shape[y-1][x-2] == 1)
+            return;
+        if(shape[y-1][x] == 1)
+            return;
         shape[y-1][x-1] = 1;
     }
 
-    public void run(int position) {
-//        int x = position;
+    public void run(int xPos) {
+//        int x = xPos;
 //        for (int i = 0; i < height; i++) {
 //            if(shape[i][x] == 1)
 //                x
