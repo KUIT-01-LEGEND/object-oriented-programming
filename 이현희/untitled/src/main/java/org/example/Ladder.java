@@ -12,11 +12,6 @@ public class Ladder {
         shape = new int[height][numberOfPeople];
     }
 
-    public int getPosValue(int x, int y) {
-        return shape[y-1][x-1];
-    }
-
-
     //왼쪽에서 오른쪽으로 그어
     public void drawLine(int x, int y) {
         if(y == 1 || y == height)
@@ -49,5 +44,20 @@ public class Ladder {
                 x++;
         }
         return x+1;
+    }
+
+    public int getPosValue(int x, int y) {
+        return shape[y-1][x-1];
+    }
+
+    public void printShape() {
+        String ret = "";
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < numberOfPeople; j++) {
+                ret += shape[i][j] + " ";
+            }
+            ret += "\n";
+        }
+        System.out.println(ret);
     }
 }
