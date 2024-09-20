@@ -58,7 +58,7 @@ public class RowTest {
 
         //when
         int startPos = 3;
-        int ret = row.runWithPrint(3);
+        int ret = row.runWithPrint(startPos);
 
         //then
         assertEquals(ret, 3);

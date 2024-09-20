@@ -14,7 +14,7 @@ public class RowRunnerTest {
 
         //when
         int startPos = 3;
-        int ret = rowRunner.run(3);
+        int ret = rowRunner.run(startPos);
 
         //then
         assertEquals(ret, 3);
