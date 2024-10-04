@@ -1,8 +1,7 @@
 package org.example.ver2;
 
 public class Line {
-    boolean isLineDrawed;
-
+    private boolean isLineDrawed;
     public Line() {
         isLineDrawed = false;
     }

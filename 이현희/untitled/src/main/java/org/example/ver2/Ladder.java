@@ -3,17 +3,17 @@ package org.example.ver2;
 import java.util.Random;
 
 public class Ladder {
-    Row[] rows;
+    private Row[] rows;
     public void makeLadder(int width, int height) {
-        rows = new org.example.Row[height];
+        rows = new Row[height];
         for (int i = 0; i < height; i++) {
-            rows[i] = new org.example.Row(width);
+            rows[i] = new Row(width);
         }
     }
     public void makeLadderRandomly(int width, int height) {
-        rows = new org.example.Row[height];
+        rows = new Row[height];
         for (int i = 0; i < height; i++) {
-            rows[i] = new org.example.Row(width);
+            rows[i] = new Row(width);
         }
         Random random = new Random();
         System.out.println(width*height*0.3);

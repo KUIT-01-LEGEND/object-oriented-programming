@@ -1,7 +1,7 @@
 package org.example.ver2;
 
 public class Game {
-    Ladder ladder = new Ladder();
+    private Ladder ladder = new Ladder();
     public void makeLadder(int width, int height) {
         ladder.makeLadder(width, height);
     }

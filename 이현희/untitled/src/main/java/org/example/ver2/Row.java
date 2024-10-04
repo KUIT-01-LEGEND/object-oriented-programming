@@ -1,7 +1,7 @@
 package org.example.ver2;
 
 public class Row {
-    Line[] lines;
+    private Line[] lines;
     public Row(int width) {
         lines = new Line[width];
         for (int i = 0; i < width; i++) {
