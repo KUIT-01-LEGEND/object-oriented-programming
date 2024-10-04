@@ -17,7 +17,9 @@ class User {
     public void drawHorizontalLine(Game game, int row, int column) {
         game.drawHorizontalLine(row, column);
     }
-    public int runGame() { return -1; }
+    public int runGame(Game game, int startColumn) {
+        return game.runGame(startColumn);
+    }
 }
 
 class Game {
@@ -28,42 +30,50 @@ class Game {
     public void drawHorizontalLine(int row, int column) {
         ladder.drawHorizontalLine(row, column);
     }
-    public int runGame() { return -1; }
+    public int runGame(int startColumn) {
+        return ladder.calcResult(startColumn); }
 }
 
 class Ladder {
-    Column[] columns;
+    Row[] rows;
     public void makeLadder(int width, int height) {
-        columns = new Column[width];
-        for (int i = 0; i < width; i++) {
-            columns[i] = new Column(height);
+        rows = new Row[height];
+        for (int i = 0; i < height; i++) {
+            rows[i] = new Row(width);
         }
     }
     public void drawHorizontalLine(int row, int column) {
-        columns[column-1].drawHorizontalLine(row);
     }
-    public int runGame() { return -1; }
-}
-
-class Column {
-    Row[] rows;
-    public Column(int height) {
-        rows = new Row[height];
-        for (int i = 0; i < rows.length; i++) {
-            rows[i] = new Row();
-        }
-    }
-    public void drawHorizontalLine(int row) {
-        rows[row-1].drawHorizontalLine();
+    public int calcResult(int startColumn) {
+        return -1;
     }
 }
 
 class Row {
-    boolean isLine;
-    public Row() {
-        this.isLine = false;
+    Line[] lines;
+    public Row(int width) {
+        lines = new Line[width];
+        for (int i = 0; i < width; i++) {
+            lines[i] = new Line();
+        }
     }
-    public void drawHorizontalLine() {
-        isLine = true;
+    public int calcResult(int startColumn) {
+        return -1;
+    }
+    public void drawLine(int column) {
     }
 }
+
+class Line {
+    boolean isLineDrawed;
+
+    public Line() {
+        isLineDrawed = false;
+    }
+    public void drawLine() {
+    }
+    public boolean checkIsLineDrawed() {
+        return false;
+    }
+}
+
