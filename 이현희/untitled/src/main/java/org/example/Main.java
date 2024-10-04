@@ -10,16 +10,19 @@ public class Main {
 class User {
     public void makeLadder(int width, int height) {}
     public void drawHorizontalLine(int row, int column) {}
+    public int runGame() { return -1; }
 }
 
 class Game {
     public void makeLadder(int width, int height) {}
     public void drawHorizontalLine(int row, int column) {}
+    public int runGame() { return -1; }
 }
 
 class Ladder {
     public void makeLadder(int width, int height) {}
     public void drawHorizontalLine(int row, int column) {}
+    public int runGame() { return -1; }
 }
 
 class Column {
