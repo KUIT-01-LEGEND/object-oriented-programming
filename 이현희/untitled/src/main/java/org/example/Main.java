@@ -43,6 +43,7 @@ class Ladder {
         }
     }
     public void drawHorizontalLine(int row, int column) {
+        rows[row-1].drawLine(column);
     }
     public int calcResult(int startColumn) {
         return -1;
@@ -57,10 +58,15 @@ class Row {
             lines[i] = new Line();
         }
     }
+    public void drawLine(int column) {
+        if(column - 2 >= 0 && lines[column-2].checkIsLineDrawed())
+            return;
+        if(column <= lines.length -1 && lines[column].checkIsLineDrawed())
+            return;
+        lines[column-1].drawLine();
+    }
     public int calcResult(int startColumn) {
         return -1;
-    }
-    public void drawLine(int column) {
     }
 }
 
@@ -71,6 +77,7 @@ class Line {
         isLineDrawed = false;
     }
     public void drawLine() {
+        isLineDrawed = true;
     }
     public boolean checkIsLineDrawed() {
         return false;
