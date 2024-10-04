@@ -4,25 +4,12 @@ import java.util.Random;
 
 public class Ladder {
     private Row[] rows;
+    private LadderCreator ladderCreator;
     public void makeLadder(int width, int height) {
-        rows = new Row[height];
-        for (int i = 0; i < height; i++) {
-            rows[i] = new Row(width);
-        }
+        rows = ladderCreator.makeLadder(width, height);
     }
     public void makeLadderRandomly(int width, int height) {
-        rows = new Row[height];
-        for (int i = 0; i < height; i++) {
-            rows[i] = new Row(width);
-        }
-        Random random = new Random();
-        System.out.println(width*height*0.3);
-        for(int i=0;i<width*height*0.3;i++) {
-            int row = random.nextInt(1, height);
-            int column = random.nextInt(1, width);
-            System.out.println(row + " " + column);
-            drawHorizontalLine(row, column);
-        }
+        ladderCreator.makeLadderRandomly(width, height);
     }
     public void drawHorizontalLine(int row, int column) {
         rows[row-1].drawLine(column);
