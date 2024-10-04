@@ -6,6 +6,8 @@ public class Main {
         Game game = new Game();
 
         user.makeLadder(game, 3, 3);
+        user.drawHorizontalLine(game, 1, 1);
+        System.out.println(user.runGame(game, 1));
     }
 }
 
@@ -46,7 +48,11 @@ class Ladder {
         rows[row-1].drawLine(column);
     }
     public int calcResult(int startColumn) {
-        return -1;
+        int result = startColumn;
+        for (int i = 0; i < rows.length; i++) {
+            result = rows[i].calcResult(result);
+        }
+        return result;
     }
 }
 
@@ -66,7 +72,11 @@ class Row {
         lines[column-1].drawLine();
     }
     public int calcResult(int startColumn) {
-        return -1;
+        if(startColumn - 2 >= 0 && lines[startColumn-2].checkIsLineDrawed())
+            return startColumn - 1;
+        if(lines[startColumn - 1].checkIsLineDrawed())
+            return startColumn + 1;
+        return startColumn;
     }
 }
 
@@ -80,7 +90,7 @@ class Line {
         isLineDrawed = true;
     }
     public boolean checkIsLineDrawed() {
-        return false;
+        return isLineDrawed;
     }
 }
 
