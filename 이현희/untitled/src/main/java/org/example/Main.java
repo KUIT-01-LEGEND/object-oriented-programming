@@ -1,14 +1,20 @@
 package org.example;
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
         User user = new User();
-        Game game = new Game();
+        Game game1 = new Game();
 
-        user.makeLadder(game, 3, 3);
-        user.drawHorizontalLine(game, 1, 1);
-        user.print(game);
-        System.out.println(user.runGame(game, 1));
+        user.makeLadder(game1, 3, 3);
+        user.drawHorizontalLine(game1, 1, 1);
+        user.print(game1);
+        System.out.println(user.runGame(game1, 1));
+
+        Game game2 = new Game();
+        user.makeLadderRandomly(game2, 5, 5);
+        user.print(game2);
     }
 }
 
@@ -16,6 +22,9 @@ public class Main {
 class User {
     public void makeLadder(Game game, int width, int height) {
         game.makeLadder(width, height);
+    }
+    public void makeLadderRandomly(Game game, int width, int height) {
+        game.makeLadderRandomly(width, height);
     }
     public void drawHorizontalLine(Game game, int row, int column) {
         game.drawHorizontalLine(row, column);
@@ -32,6 +41,9 @@ class Game {
     Ladder ladder = new Ladder();
     public void makeLadder(int width, int height) {
         ladder.makeLadder(width, height);
+    }
+    public void makeLadderRandomly(int width, int height) {
+        ladder.makeLadderRandomly(width, height);
     }
     public void drawHorizontalLine(int row, int column) {
         ladder.drawHorizontalLine(row, column);
@@ -50,6 +62,20 @@ class Ladder {
         rows = new Row[height];
         for (int i = 0; i < height; i++) {
             rows[i] = new Row(width);
+        }
+    }
+    public void makeLadderRandomly(int width, int height) {
+        rows = new Row[height];
+        for (int i = 0; i < height; i++) {
+            rows[i] = new Row(width);
+        }
+        Random random = new Random();
+        System.out.println(width*height*0.3);
+        for(int i=0;i<width*height*0.3;i++) {
+            int row = random.nextInt(1, height);
+            int column = random.nextInt(1, width);
+            System.out.println(row + " " + column);
+            drawHorizontalLine(row, column);
         }
     }
     public void drawHorizontalLine(int row, int column) {
