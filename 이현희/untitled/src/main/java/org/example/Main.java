@@ -5,3 +5,24 @@ public class Main {
         System.out.println("Hello world!");
     }
 }
+
+
+class User {
+
+}
+
+class Game {
+
+}
+
+class Ladder {
+
+}
+
+class Row {
+
+}
+
+class Column {
+
+}
