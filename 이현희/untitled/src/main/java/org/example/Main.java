@@ -8,21 +8,25 @@ public class Main {
 
 
 class User {
-
+    public void makeLadder(int width, int height) {}
 }
 
 class Game {
-
+    public void makeLadder(int width, int height) {}
 }
 
 class Ladder {
-
-}
-
-class Row {
-
+    public void makeLadder(int width, int height) {}
 }
 
 class Column {
+    public Column[] makeColumns(int width) {
+        return null;
+    }
+}
 
+class Row {
+    public Row[] makeRows(int height) {
+        return null;
+    }
 }
