@@ -7,6 +7,7 @@ public class Main {
 
         user.makeLadder(game, 3, 3);
         user.drawHorizontalLine(game, 1, 1);
+        user.print(game);
         System.out.println(user.runGame(game, 1));
     }
 }
@@ -22,6 +23,9 @@ class User {
     public int runGame(Game game, int startColumn) {
         return game.runGame(startColumn);
     }
+    public void print(Game game) {
+        game.printLadder();
+    }
 }
 
 class Game {
@@ -33,7 +37,11 @@ class Game {
         ladder.drawHorizontalLine(row, column);
     }
     public int runGame(int startColumn) {
-        return ladder.calcResult(startColumn); }
+        return ladder.calcResult(startColumn);
+    }
+    public void printLadder(){
+        ladder.print();
+    }
 }
 
 class Ladder {
@@ -53,6 +61,11 @@ class Ladder {
             result = rows[i].calcResult(result);
         }
         return result;
+    }
+    public void print() {
+        for (int i = 0; i < rows.length; i++) {
+            rows[i].print();
+        }
     }
 }
 
@@ -78,6 +91,15 @@ class Row {
             return startColumn + 1;
         return startColumn;
     }
+    public void print() {
+        for (int i = 0; i < 2 * lines.length - 1; i++) {
+            if(i%2==0)
+                System.out.print("|");
+            else
+                lines[(i-1)/2].print();
+        }
+        System.out.println();
+    }
 }
 
 class Line {
@@ -91,6 +113,12 @@ class Line {
     }
     public boolean checkIsLineDrawed() {
         return isLineDrawed;
+    }
+    public void print() {
+        if(isLineDrawed)
+            System.out.print("-");
+        else
+            System.out.print(" ");
     }
 }
 
