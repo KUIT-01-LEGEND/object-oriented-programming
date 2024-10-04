@@ -14,7 +14,9 @@ class User {
     public void makeLadder(Game game, int width, int height) {
         game.makeLadder(width, height);
     }
-    public void drawHorizontalLine(int row, int column) {}
+    public void drawHorizontalLine(Game game, int row, int column) {
+        game.drawHorizontalLine(row, column);
+    }
     public int runGame() { return -1; }
 }
 
@@ -23,7 +25,9 @@ class Game {
     public void makeLadder(int width, int height) {
         ladder.makeLadder(width, height);
     }
-    public void drawHorizontalLine(int row, int column) {}
+    public void drawHorizontalLine(int row, int column) {
+        ladder.drawHorizontalLine(row, column);
+    }
     public int runGame() { return -1; }
 }
 
@@ -35,7 +39,9 @@ class Ladder {
             columns[i] = new Column(height);
         }
     }
-    public void drawHorizontalLine(int row, int column) {}
+    public void drawHorizontalLine(int row, int column) {
+        columns[column-1].drawHorizontalLine(row);
+    }
     public int runGame() { return -1; }
 }
 
@@ -47,12 +53,17 @@ class Column {
             rows[i] = new Row();
         }
     }
-    public void drawHorizontalLine(int row) {}
+    public void drawHorizontalLine(int row) {
+        rows[row-1].drawHorizontalLine();
+    }
 }
 
 class Row {
+    boolean isLine;
     public Row() {
-
+        this.isLine = false;
     }
-    public void drawHorizontalLine() {}
+    public void drawHorizontalLine() {
+        isLine = true;
+    }
 }
