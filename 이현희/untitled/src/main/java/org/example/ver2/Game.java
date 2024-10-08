@@ -1,12 +1,12 @@
 package org.example.ver2;
 
 public class Game {
-    private Ladder ladder = new Ladder();
+    private Ladder ladder;
     public void makeLadder(int width, int height) {
-        ladder.makeLadder(width, height);
+        ladder = new LadderCreator().makeLadder(width, height);
     }
     public void makeLadderRandomly(int width, int height) {
-        ladder.makeLadderRandomly(width, height);
+        ladder = new LadderCreator().makeLadderRandomly(width, height);
     }
     public void drawHorizontalLine(int row, int column) {
         ladder.drawHorizontalLine(row, column);

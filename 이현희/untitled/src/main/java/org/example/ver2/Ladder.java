@@ -4,12 +4,8 @@ import java.util.Random;
 
 public class Ladder {
     private Row[] rows;
-    private LadderCreator ladderCreator;
-    public void makeLadder(int width, int height) {
-        rows = ladderCreator.makeLadder(width, height);
-    }
-    public void makeLadderRandomly(int width, int height) {
-        ladderCreator.makeLadderRandomly(width, height);
+    public Ladder(Row[] rows) {
+        this.rows = rows;
     }
     public void drawHorizontalLine(int row, int column) {
         rows[row-1].drawLine(column);
