@@ -16,8 +16,6 @@ public class LadderRandomCreator implements LadderCreator{
             if(!drawHorizontalLine(rows, row, column)) {
                 i--;
                 continue;
-            } else {
-                System.out.println(row + " " + column);
             }
         }
 
