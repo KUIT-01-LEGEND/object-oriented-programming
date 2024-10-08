@@ -4,5 +4,5 @@ import java.util.Random;
 
 public interface LadderCreator {
 
-    public Ladder makeLadder(int width, int height);
+    Ladder makeLadder(int width, int height);
 }
