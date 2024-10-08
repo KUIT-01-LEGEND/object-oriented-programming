@@ -13,22 +13,25 @@ public class LadderCreator {
     }
     public Ladder makeLadderRandomly(int width, int height) {
         Row[] rows = new Row[height];
-        rows = new Row[height];
         for (int i = 0; i < height; i++) {
             rows[i] = new Row(width);
         }
         Random random = new Random();
         System.out.println(width*height*0.3);
-        for(int i=0;i<width*height*0.3;i++) {
+        for(int i=0;i<width*height*0.3-1;i++) {
             int row = random.nextInt(1, height);
             int column = random.nextInt(1, width);
-            System.out.println(row + " " + column);
-            drawHorizontalLine(rows, row, column);
+            if(!drawHorizontalLine(rows, row, column)) {
+                i--;
+                continue;
+            } else {
+                System.out.println(row + " " + column);
+            }
         }
 
         return new Ladder(rows);
     }
-    private void drawHorizontalLine(Row[] rows, int row, int column) {
-        rows[row-1].drawLine(column);
+    private boolean drawHorizontalLine(Row[] rows, int row, int column) {
+        return rows[row-1].drawLine(column);
     }
 }

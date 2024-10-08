@@ -8,12 +8,12 @@ public class Row {
             lines[i] = new Line();
         }
     }
-    public void drawLine(int column) {
+    public boolean drawLine(int column) {
         if(column - 2 >= 0 && lines[column-2].checkIsLineDrawed())
-            return;
+            return false;
         if(column <= lines.length -1 && lines[column].checkIsLineDrawed())
-            return;
-        lines[column-1].drawLine();
+            return false;
+        return lines[column-1].drawLine();
     }
     public int calcResult(int startColumn) {
         if(startColumn - 2 >= 0 && lines[startColumn-2].checkIsLineDrawed())

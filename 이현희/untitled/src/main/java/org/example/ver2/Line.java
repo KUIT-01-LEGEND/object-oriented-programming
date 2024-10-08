@@ -5,8 +5,13 @@ public class Line {
     public Line() {
         isLineDrawed = false;
     }
-    public void drawLine() {
-        isLineDrawed = true;
+    public boolean drawLine() {
+        if(isLineDrawed) {
+            return false;
+        } else {
+            isLineDrawed = true;
+            return true;
+        }
     }
     public boolean checkIsLineDrawed() {
         return isLineDrawed;

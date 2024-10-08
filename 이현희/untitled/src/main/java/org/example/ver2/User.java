@@ -7,8 +7,8 @@ public class User {
     public void makeLadderRandomly(Game game, int width, int height) {
         game.makeLadderRandomly(width, height);
     }
-    public void drawHorizontalLine(Game game, int row, int column) {
-        game.drawHorizontalLine(row, column);
+    public boolean drawHorizontalLine(Game game, int row, int column) {
+        return game.drawHorizontalLine(row, column);
     }
     public int runGame(Game game, int startColumn) {
         return game.runGame(startColumn);

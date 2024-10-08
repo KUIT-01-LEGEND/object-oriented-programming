@@ -7,8 +7,8 @@ public class Ladder {
     public Ladder(Row[] rows) {
         this.rows = rows;
     }
-    public void drawHorizontalLine(int row, int column) {
-        rows[row-1].drawLine(column);
+    public boolean drawHorizontalLine(int row, int column) {
+        return rows[row-1].drawLine(column);
     }
     public int calcResult(int startColumn) {
         int result = startColumn;

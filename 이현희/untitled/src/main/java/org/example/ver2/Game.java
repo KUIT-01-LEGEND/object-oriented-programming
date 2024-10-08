@@ -8,8 +8,8 @@ public class Game {
     public void makeLadderRandomly(int width, int height) {
         ladder = new LadderCreator().makeLadderRandomly(width, height);
     }
-    public void drawHorizontalLine(int row, int column) {
-        ladder.drawHorizontalLine(row, column);
+    public boolean drawHorizontalLine(int row, int column) {
+        return ladder.drawHorizontalLine(row, column);
     }
     public int runGame(int startColumn) {
         return ladder.calcResult(startColumn);

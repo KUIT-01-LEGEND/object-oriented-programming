@@ -14,6 +14,7 @@ public class Main {
         user.drawHorizontalLine(game1, 1, 1);
         user.print(game1);
         System.out.println(user.runGame(game1, 1));
+        System.out.println();
 
         Game game2 = new Game();
         user.makeLadderRandomly(game2, 5, 5);
