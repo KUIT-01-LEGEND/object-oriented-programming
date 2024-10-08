@@ -3,7 +3,7 @@ package org.example.ver2;
 import java.util.Random;
 
 public class LadderCreator {
-    public Ladder makeLadder(int width, int height) {
+    public static Ladder makeLadder(int width, int height) {
         Row[] rows = new Row[height];
         for (int i = 0; i < height; i++) {
             rows[i] = new Row(width);
@@ -11,7 +11,7 @@ public class LadderCreator {
 
         return new Ladder(rows);
     }
-    public Ladder makeLadderRandomly(int width, int height) {
+    public static Ladder makeLadderRandomly(int width, int height) {
         Row[] rows = new Row[height];
         for (int i = 0; i < height; i++) {
             rows[i] = new Row(width);
@@ -31,7 +31,7 @@ public class LadderCreator {
 
         return new Ladder(rows);
     }
-    private boolean drawHorizontalLine(Row[] rows, int row, int column) {
+    private static boolean drawHorizontalLine(Row[] rows, int row, int column) {
         return rows[row-1].drawLine(column);
     }
 }
