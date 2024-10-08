@@ -1,6 +1,6 @@
 package org.example.ver2;
 
-public class LadderGameFactory {
+public class GameFactory {
     public static Game createRandomLadderGame() {
         return new Game(new LadderRandomCreator());
     }
