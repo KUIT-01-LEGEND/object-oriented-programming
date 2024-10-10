@@ -1,6 +1,5 @@
 package org.example.ladder;
 
-import org.example.Drawer;
 import org.example.row.Row;
 
 public class LadderDrawer {
